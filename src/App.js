@@ -5,6 +5,7 @@ import Header from "./Layout/Header";
 import Destination from "./Pages/Destination";
 import Crew from "./Pages/Crew";
 import Technology from "./Pages/Technology";
+import NotFound from "./Pages/NotFound";
 
 export default function App() {
   return (
@@ -15,6 +16,7 @@ export default function App() {
         <Route path="/destination" element={<Destination />} />
         <Route path="/crew" element={<Crew />} />
         <Route path="/technology" element={<Technology />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
     </Container>
   );
