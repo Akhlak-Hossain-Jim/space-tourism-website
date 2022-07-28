@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import styled from "styled-components";
+import { Routes, Route } from "react-router-dom";
+import Home from "./Pages/Home";
+import Header from "./Layout/Header";
+import Destination from "./Pages/Destination";
+import Crew from "./Pages/Crew";
+import Technology from "./Pages/Technology";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/destination" element={<Destination />} />
+        <Route path="/crew" element={<Crew />} />
+        <Route path="/technology" element={<Technology />} />
+      </Routes>
+    </Container>
   );
 }
 
-export default App;
+const Container = styled.div`
+  max-width: 1440px;
+  margin: 0 auto;
+  position: relative;
+`;
